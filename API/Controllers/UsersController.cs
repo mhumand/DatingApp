@@ -31,5 +31,11 @@ namespace API.Controllers
         {
             return await _context.Users.FindAsync(id);
         }
+
+        [HttpGet("{id}/{UserName}")]
+        public ActionResult<string> GetUser(string UserName, int id)
+        {
+            return UserName + "'s ID is " + id.ToString();
+        }
     }
 }
